@@ -1,6 +1,10 @@
 const express = require('express');
 const db = require('./db/connection');
 const apiRoutes = require('./routes/apiRoutes');
+var inquirer = require('inquirer');
+const cTable = require('console.table');
+
+
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -8,6 +12,7 @@ const app = express();
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 
 // Use apiRoutes
 app.use('/api', apiRoutes);
